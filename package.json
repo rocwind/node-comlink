@@ -1,0 +1,27 @@
+{
+  "name": "node-comlink",
+  "version": "0.1.0",
+  "description": "An adapter for node worker threads to work with Comlink",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocwind/node-comlink.git"
+  },
+  "keywords": [
+    "comlink",
+    "node",
+    "rpc"
+  ],
+  "author": "Roc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rocwind/node-comlink/issues"
+  },
+  "homepage": "https://github.com/rocwind/node-comlink#readme",
+  "devDependencies": {
+    "comlink": "^3.0.3"
+  }
+}
