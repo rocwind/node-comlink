@@ -1,4 +1,4 @@
-const { NodeWorkerThreadMessageAdapter, patchMessageChannel } = require('../index');
+const { NodeMessageAdapter, patchMessageChannel } = require('../../worker_threads');
 patchMessageChannel(); // need patch it before load comlink
 const Comlink = require('comlink/umd/comlink.js');
 
@@ -9,5 +9,4 @@ class MyClass {
     }
 }
 
-Comlink.expose(MyClass, new NodeWorkerThreadMessageAdapter());
-
+Comlink.expose(MyClass, new NodeMessageAdapter());

@@ -2,7 +2,7 @@
   "name": "node-comlink",
   "version": "0.1.0",
   "description": "An adapter for node worker threads to work with Comlink",
-  "main": "index.js",
+  "main": "child_process.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,7 +21,7 @@
     "url": "https://github.com/rocwind/node-comlink/issues"
   },
   "homepage": "https://github.com/rocwind/node-comlink#readme",
-  "devDependencies": {
+  "dependencies": {
     "comlink": "^3.0.3"
   }
 }
