@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/rocwind/node-comlink#readme",
   "dependencies": {
-    "comlink": "^3.0.3"
+    "comlinkjs": "^3.0.3"
   }
 }

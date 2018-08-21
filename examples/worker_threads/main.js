@@ -7,7 +7,7 @@
 const { Worker } = require('worker_threads');
 const { NodeMessageAdapter, patchMessageChannel } = require('../../worker_threads');
 patchMessageChannel(); // need patch it before load comlink
-const Comlink = require('comlink/umd/comlink.js');
+const Comlink = require('comlinkjs/umd/comlink.js');
 
 const worker = new Worker(`${__dirname}/worker.js`);
 

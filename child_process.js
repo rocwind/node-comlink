@@ -1,5 +1,5 @@
 const { applyEventAdapter } = require('./common');
-const { wrap } = require('comlink/umd/messagechanneladapter');
+const { wrap } = require('comlinkjs/umd/messagechanneladapter');
 
 class NodeMessageAdapter {
     constructor(worker) {

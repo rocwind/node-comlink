@@ -10,7 +10,7 @@ An adapter for node child process or worker threads to work with [Comlink](https
 const { fork } = require('child_process');
 const { NodeMessageAdapter, patchMessageChannel } = require('node-comlink');
 patchMessageChannel(); // need patch it before load comlink
-const Comlink = require('comlink/umd/comlink.js');
+const Comlink = require('comlinkjs/umd/comlink.js');
 
 const worker = fork(`${__dirname}/worker.js`);
 
@@ -30,7 +30,7 @@ f();
 // worker.js
 const { NodeMessageAdapter, patchMessageChannel } = require('node-comlink');
 patchMessageChannel(); // need patch it before load comlink
-const Comlink = require('comlink/umd/comlink.js');
+const Comlink = require('comlinkjs/umd/comlink.js');
 
 const myValue = 42;
 class MyClass {
