@@ -22,7 +22,10 @@
     "url": "https://github.com/rocwind/node-comlink/issues"
   },
   "homepage": "https://github.com/rocwind/node-comlink#readme",
-  "dependencies": {
-    "comlinkjs": "^3.0.3"
+  "peerDependencies": {
+    "comlinkjs": ">=3.0.0"
+  },
+  "devDependencies": {
+    "comlinkjs": "^3.0.0"
   }
 }
