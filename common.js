@@ -20,6 +20,11 @@ function applyEventAdapter(target, emitter) {
     });
 }
 
+function patchCommon() {
+    global.self = global;
+}
+
 module.exports = {
     applyEventAdapter,
+    patchCommon,
 }

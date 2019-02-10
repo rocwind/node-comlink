@@ -1,6 +1,5 @@
 # vim temp file
 *.swp
-package-lock.json
 
 # Logs
 logs

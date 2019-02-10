@@ -1,5 +1,5 @@
 const { MessageChannel, MessagePort, parentPort } = require('worker_threads');
-const { applyEventAdapter } = require('./common');
+const { applyEventAdapter, patchCommon } = require('./common');
 
 // adapter for main thread
 class NodeMessageAdapter {
@@ -14,6 +14,7 @@ class NodeMessageAdapter {
 }
 
 function patchMessageChannel() {
+    patchCommon();
     global.MessageChannel = MessageChannel;
     global.MessagePort = MessagePort;
     applyEventAdapter(MessagePort.prototype);

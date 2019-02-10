@@ -1,13 +1,17 @@
-const { applyEventAdapter } = require('./common');
+const { applyEventAdapter, patchCommon } = require('./common');
 const { wrap } = require('comlinkjs/umd/messagechanneladapter');
 
 class NodeMessageAdapter {
     constructor(worker) {
+        // use child process id as wrap id
+        let wrapId = '';
         if (worker) {
+            wrapId = worker.pid;
             // main process
             applyEventAdapter(worker, worker);
         } else {
             // child process
+            wrapId = process.pid;
             worker = {
                 send(message) {
                     process.send(message);
@@ -16,7 +20,7 @@ class NodeMessageAdapter {
             applyEventAdapter(worker, process);
         }
 
-        this.wrap = wrap(worker);
+        this.wrap = wrap(worker, wrapId);
     }
 
     postMessage(message, transferList) {
@@ -67,6 +71,7 @@ class MessageChannel {
 
 
 function patchMessageChannel() {
+    patchCommon();
     global.MessageChannel = MessageChannel;
     global.MessagePort = MessagePort;
 }
