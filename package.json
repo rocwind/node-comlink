@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "comlinkjs": "3.1.1",
-    "jest": "24.0.0"
+    "jest": "24.1.0"
   }
 }
