@@ -1,4 +1,4 @@
-# node-comlink
+# node-comlink [![Build Status](https://travis-ci.org/rocwind/node-comlink.svg?branch=master)](https://travis-ci.org/rocwind/node-comlink)
 An adapter for node child process or worker threads to work with [Comlink](https://github.com/GoogleChromeLabs/comlink)
 
 ## Install
