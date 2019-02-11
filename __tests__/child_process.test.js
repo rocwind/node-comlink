@@ -43,3 +43,11 @@ it('worker execute callback with given value', async done => {
         done();
     }), value);
 });
+
+it('worker echoes input values in parallel', async () => {
+    const WorkerClass = Comlink.proxy(new NodeMessageAdapter(worker));
+    const instance = await new WorkerClass();
+    const values = [1, 2];
+    const results = await Promise.all(values.map(instance.echo));
+    expect(results).toEqual(values);
+});

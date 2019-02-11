@@ -39,20 +39,29 @@ class MessagePort {
     constructor() {
         this.otherPort = null;
         this.onmessage = null;
+        this.onmessageListeners = new Set();
+    }
+
+    dispatchMessage(message) {
+        const event = { data: message };
+        if (this.onmessage) {
+            this.onmessage(event);
+        }
+        this.onmessageListeners.forEach(listener => listener(event));
     }
 
     postMessage(message) {
-        if (this.otherPort && this.otherPort.onmessage) {
-            this.otherPort.onmessage({ data: message });
+        if (this.otherPort) {
+            this.otherPort.dispatchMessage(message);
         }
     }
 
     addEventListener(type, listener) {
-        this.onmessage = listener;
+        this.onmessageListeners.add(listener);
     }
 
-    removeEventListener() {
-        this.onmessage = null;
+    removeEventListener(type, listener) {
+        this.onmessageListeners.delete(listener);
     }
 
     start() {
