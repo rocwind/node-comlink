@@ -47,7 +47,7 @@ Worker Threads is a new feature added in node 10.5.0, it comes with native Messa
 
 ```
 // To go with Worker Threads:
-const { NodeMessageAdapter, patchMessageChannel } = require('node-comlink/worker_threads');
+const { NodeMessageAdapter, patchMessageChannel } = require('node-comlink/lib/worker_threads');
 ```
 
 ## Examples

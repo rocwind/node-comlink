@@ -1,4 +1,4 @@
-const { NodeMessageAdapter, patchMessageChannel } = require('../../worker_threads');
+const { NodeMessageAdapter, patchMessageChannel } = require('../../lib/worker_threads');
 patchMessageChannel(); // need patch it before load comlink
 const Comlink = require('comlinkjs/umd/comlink.js');
 

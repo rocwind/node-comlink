@@ -1,3 +1,5 @@
+# output files
+lib/
 # vim temp file
 *.swp
 

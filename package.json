@@ -2,11 +2,18 @@
   "name": "node-comlink",
   "version": "0.2.4",
   "description": "An adapter for node worker threads to work with Comlink",
-  "main": "child_process.js",
+  "main": "lib/child_process.js",
+  "types": "lib/child_process.d.ts",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
+    "clean": "del-cli lib",
+    "build": "npm run clean && npm run compile && rollup lib/child_process.js --file lib/child_process.js --format cjs && rollup lib/worker_threads.js --file lib/worker_threads.js --format cjs",
+    "compile": "tsc --outDir lib -d",
     "preversion": "npm test",
     "postversion": "git push origin master && git push origin --tags && npm publish",
-    "test": "jest"
+    "test": "npm run build && jest"
   },
   "repository": {
     "type": "git",
@@ -28,6 +35,9 @@
   },
   "devDependencies": {
     "comlinkjs": "3.1.1",
-    "jest": "24.1.0"
+    "del-cli": "1.1.0",
+    "jest": "24.1.0",
+    "rollup": "1.1.2",
+    "typescript": "3.3.3"
   }
 }

@@ -1,4 +1,4 @@
-const { NodeMessageAdapter, patchMessageChannel } = require('../../child_process');
+const { NodeMessageAdapter, patchMessageChannel } = require('../../lib/child_process');
 patchMessageChannel(); // need patch it before load comlink
 const Comlink = require('comlinkjs/umd/comlink.js');
 

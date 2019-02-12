@@ -1,6 +1,13 @@
+import { Endpoint } from "comlinkjs";
+import { EventEmitter } from "events";
+
 // handle the difference between EventEmitter(node) and EventTarget(web)
-const proxyByListener = new WeakMap();
-function applyEventAdapter(target, emitter) {
+const proxyByListener: WeakMap<Function, Function> = new WeakMap();
+
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export type EndpointEventEmitter = Omit<Endpoint, 'postMessage'>;
+
+export function applyEventAdapter<T>(target: T, emitter?: EventEmitter): T & EndpointEventEmitter {
     Object.assign(target, {
         addEventListener: function(type, listener) {
             const proxy = function(data) {
@@ -18,13 +25,9 @@ function applyEventAdapter(target, emitter) {
             (emitter || this).removeListener(type, proxy);
         },
     });
+    return target as T & EndpointEventEmitter;
 }
 
-function patchCommon() {
-    global.self = global;
-}
-
-module.exports = {
-    applyEventAdapter,
-    patchCommon,
+export function patchCommon() {
+    (<any>global).self = global;
 }
