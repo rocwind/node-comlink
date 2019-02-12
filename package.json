@@ -1,6 +1,6 @@
 {
   "name": "node-comlink",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "An adapter for node worker threads to work with Comlink",
   "main": "lib/child_process.js",
   "types": "lib/child_process.d.ts",
