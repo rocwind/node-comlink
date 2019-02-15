@@ -2,7 +2,7 @@ import { Endpoint } from 'comlinkjs';
 import { wrap, StringMessageChannel } from 'comlinkjs/umd/messagechanneladapter';
 import { ChildProcess } from 'child_process';
 import { applyEventAdapter, patchCommon } from './common';
-import { MessageChannelPolyfill, MessagePortPolyfill } from './polyfill';
+import 'message-port-polyfill';
 
 export class NodeMessageAdapter implements Endpoint {
     wrap: Endpoint = null;
@@ -45,6 +45,4 @@ export class NodeMessageAdapter implements Endpoint {
 
 export function patchMessageChannel() {
     patchCommon();
-    (<any>global).MessageChannel = MessageChannelPolyfill;
-    (<any>global).MessagePort = MessagePortPolyfill;
 }

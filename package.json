@@ -39,5 +39,8 @@
     "jest": "24.1.0",
     "rollup": "1.1.2",
     "typescript": "3.3.3"
+  },
+  "dependencies": {
+    "message-port-polyfill": "^0.1.0"
   }
 }
