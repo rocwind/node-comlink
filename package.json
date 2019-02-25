@@ -41,6 +41,6 @@
     "typescript": "3.3.3333"
   },
   "dependencies": {
-    "message-port-polyfill": "^0.1.0"
+    "message-port-polyfill": "^0.2.0"
   }
 }
