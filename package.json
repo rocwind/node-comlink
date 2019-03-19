@@ -38,7 +38,7 @@
     "del-cli": "1.1.0",
     "jest": "24.5.0",
     "rollup": "1.6.0",
-    "typescript": "3.3.3333"
+    "typescript": "3.3.4000"
   },
   "dependencies": {
     "message-port-polyfill": "^0.2.0"
