@@ -31,10 +31,10 @@
   },
   "homepage": "https://github.com/rocwind/node-comlink#readme",
   "peerDependencies": {
-    "comlinkjs": ">=3.0.0"
+    "comlink": ">=3.0.0"
   },
   "devDependencies": {
-    "comlinkjs": "3.2.0",
+    "comlink": "3.2.0",
     "del-cli": "1.1.0",
     "jest": "24.5.0",
     "rollup": "1.12.3",

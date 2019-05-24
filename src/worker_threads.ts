@@ -1,6 +1,6 @@
 import { MessageChannel, MessagePort, parentPort, Worker } from 'worker_threads';
 import { applyEventAdapter, patchCommon, EndpointEventEmitter } from './common';
-import { Endpoint } from 'comlinkjs';
+import { Endpoint } from 'comlink';
 
 // adapter for main thread
 export class NodeMessageAdapter implements Endpoint {

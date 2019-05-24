@@ -3,7 +3,7 @@
 const { fork } = require('child_process');
 const { NodeMessageAdapter, patchMessageChannel } = require('../../lib/child_process');
 patchMessageChannel(); // need patch it before load comlink
-const Comlink = require('comlinkjs/umd/comlink.js');
+const Comlink = require('comlink/umd/comlink.js');
 
 const worker = fork(`${__dirname}/worker.js`);
 

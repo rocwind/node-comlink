@@ -1,5 +1,5 @@
-import { Endpoint } from 'comlinkjs';
-import { wrap, StringMessageChannel } from 'comlinkjs/umd/messagechanneladapter';
+import { Endpoint } from 'comlink';
+import { wrap, StringMessageChannel } from 'comlink/umd/messagechanneladapter';
 import { ChildProcess } from 'child_process';
 import { applyEventAdapter, patchCommon } from './common';
 import 'message-port-polyfill';

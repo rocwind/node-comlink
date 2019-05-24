@@ -1,4 +1,4 @@
-import { Endpoint } from "comlinkjs";
+import { Endpoint } from "comlink";
 import { EventEmitter } from "events";
 
 // handle the difference between EventEmitter(node) and EventTarget(web)
