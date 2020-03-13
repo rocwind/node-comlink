@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/node": "12.12.21",
-    "comlink": "3.2.0",
+    "comlink": "4.2.0",
     "del-cli": "3.0.0",
     "jest": "25.1.0",
     "rollup": "2.0.6",
